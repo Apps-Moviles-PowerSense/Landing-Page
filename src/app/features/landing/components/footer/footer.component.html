@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img
+        [src]="
+          isDark
+            ? 'assets/images/logopowersense.png'
+            : 'assets/images/logopowersense.png'
+        "
+        alt="Powersense Logo"
+        class="footer-logo"
+      />
+      <p class="brand-description">{{ "FOOTER.ABOUT_TEXT" | translate }}</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <a routerLink="/">{{ "HEADER.HOME" | translate }}</a>
+      <a routerLink="/how-it-works">{{ "HEADER.HOW_IT_WORKS" | translate }}</a>
+      <a routerLink="/plans">{{ "HEADER.PLANS" | translate }}</a>
+      <a routerLink="/contact">{{ "HEADER.CONTACT" | translate }}</a>
+    </div>
+
+    <div class="footer-contact">
+      <a href="mailto:{{ 'CONTACT.EMAIL_ADDRESS' | translate }}">{{
+        "CONTACT.EMAIL_ADDRESS" | translate
+      }}</a>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" class="social-icon" (click)="openApp()">
+          <mat-icon>facebook</mat-icon>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-icon"(click)="openApp1()">
+          <mat-icon>Twitter</mat-icon>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-icon" (click)="openApp2()">
+          <mat-icon>Instagram</mat-icon>
+        </a>
+      </div>
+    </div>
+    <!-- language toggle -->
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} PowerSense</p>
+      <div class="language-selector">
+        <button
+          [class.active]="currentLang === 'en'"
+          (click)="changeLang('en')">
+          EN
+        </button>
+        <button
+          [class.active]="currentLang === 'es'"
+          (click)="changeLang('es')">
+          ES
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
